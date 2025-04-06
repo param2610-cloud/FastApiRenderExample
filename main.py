@@ -43,7 +43,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI(title="SHL Assessment Recommender API")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://127.0.0.1:3000"],  # In production, specify your frontend domain
+    allow_origins=["http://127.0.0.1:3000/","https://shl-recommendation-engine.vercel.app/"],  # In production, specify your frontend domain
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
