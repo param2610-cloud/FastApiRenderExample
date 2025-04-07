@@ -50,7 +50,7 @@ except Exception as e:
 embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
 
 # Vector store path
-VECTOR_STORE_PATH = "../data/shl_optimized_vector_db_new"
+VECTOR_STORE_PATH = "/data/shl_optimized_vector_db_new"
 
 # Response models
 class AssessmentResult(BaseModel):
