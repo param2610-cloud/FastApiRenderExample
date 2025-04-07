@@ -636,7 +636,7 @@ async def search(
     except Exception as e:
         logger.error(f"Error processing search: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Error processing search: {str(e)}")
-@app.get("/health")
+@app.get("/")
 async def health_check():
     """Health check endpoint."""
     return {"status": "ok"}
