@@ -10,12 +10,19 @@ from langchain_google_genai import GoogleGenerativeAI, GoogleGenerativeAIEmbeddi
 from langchain_chroma import Chroma
 from fastapi import FastAPI, Query
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 
 # Create FastAPI app
 app = FastAPI(title="Assessment Recommendation System API", 
               description="API for searching and recommending SHL assessments",
               version="1.0.0")
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://shl-recommendation-engine.vercel.app"],  # Allow specific origin
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods
+    allow_headers=["*"],  # Allow all headers
+)
 # Define response models
 class AssessmentResult(BaseModel):
     name: str
